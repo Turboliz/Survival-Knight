@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5emt8q6q5kmn"]
+
+[ext_resource type="Script" uid="uid://cxy5x1dd0jcx3" path="res://boss_enemy.gd" id="1_1rih2"]
+[ext_resource type="Texture2D" uid="uid://dd0ipoxk1p7m7" path="res://pixil-frame-0 (10).png" id="2_1rih2"]
+[ext_resource type="PackedScene" uid="uid://evexadrj5xt1" path="res://kill_effect.tscn" id="3_xldg4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rih2"]
+radius = 128.0
+
+[node name="BossEnemy" type="CharacterBody2D" groups=["BossEnemy"]]
+script = ExtResource("1_1rih2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -13)
+shape = SubResource("CircleShape2D_1rih2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12, -10)
+scale = Vector2(17.0313, 16.4688)
+texture = ExtResource("2_1rih2")
+
+[node name="KillEffect" parent="." instance=ExtResource("3_xldg4")]
+emitting = false
+one_shot = true
+
+[connection signal="finished" from="KillEffect" to="." method="_on_kill_effect_finished"]

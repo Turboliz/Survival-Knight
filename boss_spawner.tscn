@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvashhm1wbwnt"]
+
+[ext_resource type="Script" uid="uid://6hr6b80232bm" path="res://boss_spawner.gd" id="1_68a2k"]
+[ext_resource type="Script" uid="uid://dgl46igqpyhmu" path="res://timer.gd" id="1_e53hd"]
+[ext_resource type="PackedScene" uid="uid://c5emt8q6q5kmn" path="res://boss_enemy.tscn" id="2_k2li5"]
+
+[node name="BossSpawner" type="Node2D"]
+script = ExtResource("1_68a2k")
+BossEnemy_scene = ExtResource("2_k2li5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+script = ExtResource("1_e53hd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

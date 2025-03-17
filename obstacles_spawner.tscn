@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba70ydi17e1t4"]
+
+[ext_resource type="Script" uid="uid://tilyra4l2n7k" path="res://obstacles_spawner.gd" id="1_81f1l"]
+[ext_resource type="PackedScene" uid="uid://csqk56q02mu5l" path="res://static_body_2d.tscn" id="1_oably"]
+
+[node name="ObstaclesSpawner" type="Node2D"]
+script = ExtResource("1_81f1l")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_oably")]
+position = Vector2(-1, -1)
