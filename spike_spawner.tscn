@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwl8crq0vulh2"]
-
-[ext_resource type="Script" uid="uid://1cgkbnvg6r7b" path="res://spike_spawner.gd" id="1_1hbjt"]
-[ext_resource type="PackedScene" uid="uid://h6v1lt5ww8vc" path="res://spike.tscn" id="2_1hbjt"]
-
-[node name="Spike_spawner" type="Node2D"]
-script = ExtResource("1_1hbjt")
-
-[node name="Spike" parent="." instance=ExtResource("2_1hbjt")]
